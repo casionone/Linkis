@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [15.9.0] #指定node版本
+        node-version: [14.17.3] #指定node版本
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
