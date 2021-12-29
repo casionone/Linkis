@@ -39,4 +39,3 @@ jobs:
           mvn clean install
           mvn package
           cd web
-          npm install
