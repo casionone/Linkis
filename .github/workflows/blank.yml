@@ -45,5 +45,5 @@ jobs:
           mvn package
           cd web
           npm install
-          npm build
+          npm run build
 
