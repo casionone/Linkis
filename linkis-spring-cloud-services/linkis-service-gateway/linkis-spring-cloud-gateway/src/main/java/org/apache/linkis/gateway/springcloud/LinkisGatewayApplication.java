@@ -24,6 +24,7 @@ public class LinkisGatewayApplication {
 
 
     public static void main(String[] args) throws ReflectiveOperationException {
+         error
         LinkisBaseServerApp.main(args);
     }
 }
