@@ -19,6 +19,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.9.0] #指定node版本
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,12 +33,17 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 8
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.1
 
-      - name: install environment
+      - name: build
         run: |
           mvn -N install
           mvn clean install
           mvn package
-          cd web
+      - name: Use Node.js ${{ matrix.node-version }} #使用action安装node环境
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      - run: cd web
+      - run: npm install #安装项目依赖
+      - run: npm run build #build项目
+
