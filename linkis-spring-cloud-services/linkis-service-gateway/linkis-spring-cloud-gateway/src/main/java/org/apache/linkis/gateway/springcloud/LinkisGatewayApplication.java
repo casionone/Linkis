@@ -22,7 +22,7 @@ import org.apache.linkis.LinkisBaseServerApp;
 
 public class LinkisGatewayApplication {
 
-
+error
     public static void main(String[] args) throws ReflectiveOperationException {
          error
         LinkisBaseServerApp.main(args);
