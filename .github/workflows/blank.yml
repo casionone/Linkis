@@ -43,8 +43,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      #- run: cd web
-      - run: cd web && npm install && npm build #安装项目依赖
-      #- run: cd web
-      #- run: npm build #build项目
+      - run: cd web
+      - run: npm install #安装项目依赖
+      - run: npm build #build项目
 
