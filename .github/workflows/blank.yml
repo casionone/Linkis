@@ -33,17 +33,17 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 8
+      - name: Use Node.js ${{ matrix.node-version }} #使用action安装node环境
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: build
         run: |
           mvn -N install
           mvn clean install
           mvn package
-      - name: Use Node.js ${{ matrix.node-version }} #使用action安装node环境
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: cd web
-      - run: npm install #安装项目依赖
-      - run: npm build #build项目
+          cd web
+          npm install
+          npm build
 
