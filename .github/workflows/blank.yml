@@ -40,9 +40,9 @@ jobs:
           mvn clean install
           mvn package
       - name: Use Node.js ${{ matrix.node-version }} #使用action安装node环境
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - run: cd web
       - run: npm install #安装项目依赖
       - run: npm run build #build项目
